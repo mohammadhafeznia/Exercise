@@ -15,7 +15,9 @@ namespace ViewModel
         public string Codemeli { get; set; }
         public string image { get; set; }
         public IFormFile file { get; set; }
-        public string FileName { get; set; }
         public IFormFile FileUpload { get; set; }
+          public string FileName { get; set; }
+        public string VideoName { get; set; }
+         public IFormFile Video { get; set; }
     }
 }

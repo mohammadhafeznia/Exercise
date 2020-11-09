@@ -9,9 +9,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <meta name="description"
-  content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
   <meta name="keywords"
-  content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
   <meta name="author" content="PIXINVENT">
   <title>ثبت نام صفحه - Vuexy - قالب مدیریتی نوین پردازش آروکو</title>
   <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
@@ -32,7 +32,7 @@
 
   <!-- BEGIN: Page CSS-->
   <link rel="stylesheet" type="text/css"
-  href="..\..\..\app-assets\css-rtl\core\menu\menu-types\horizontal-menu.min.css">
+    href="..\..\..\app-assets\css-rtl\core\menu\menu-types\horizontal-menu.min.css">
   <link rel="stylesheet" type="text/css" href="..\..\..\app-assets\css-rtl\core\colors\palette-gradient.min.css">
   <link rel="stylesheet" type="text/css" href="..\..\..\app-assets\css-rtl\pages\authentication.css">
   <!-- END: Page CSS-->
@@ -48,8 +48,8 @@
 <!-- BEGIN: Body-->
 
 <body
-class="horizontal-layout horizontal-menu 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page"
-data-open="hover" data-menu="horizontal-menu" data-col="1-column">
+  class="horizontal-layout horizontal-menu 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page"
+  data-open="hover" data-menu="horizontal-menu" data-col="1-column">
   <!-- BEGIN: Content-->
 
 
@@ -90,7 +90,7 @@ data-open="hover" data-menu="horizontal-menu" data-col="1-column">
                           </div>
                           <div class="form-label-group">
                             <input type="text" asp-for="Family" class="form-control" placeholder="نام خانوادگی"
-required="">
+                              required="">
                             <label for="inputEmail">نام خانوادگی</label>
                           </div>
                           <div class="form-label-group">
@@ -101,64 +101,107 @@ required="">
                             <input type="text" asp-for="Codemeli" class="form-control" placeholder="کدملی " required="">
                             <label for="inputConfPassword">کدملی</label>
 
-  <div class="col-lg-6 col-12 p-0">
-<p style="color: red;">آپلود عکس
-                            <input type="file" onchange=" preview_image(event)" required asp-for="file">
+                            <div class="col-lg-6 col-12 p-0">
+                              <p style="color: 	Teal;">آپلود عکس
+                                <input type="file" onchange=" preview_image(event)" required asp-for="file">
 
-                           
 
-                            <img src="~/app-assets/images/icons/user.png" alt="" id="output_image"
-style="width: 250px; height:250px">
 
+                                <img src="~/app-assets/images/icons/user.png" alt="" id="output_image"
+                                  style="width: 250px; height:250px">
+
+
+                                <script>
+                                  function preview_image(event) {
+                                    var reader = new FileReader();
+                                    reader.onload = function () {
+                                      var output = document.getElementById('output_image');
+                                      output.src = reader.result;
+                                    }
+                                    reader.readAsDataURL(event.target.files[0]);
+
+                                  }
+
+
+                                </script>
+
+
+                              <p style="color: 	Teal;">آپلودفایل
+                                <input type="file" required asp-for="FileUpload">
+                              </p>
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+
+                            @* ///////////////////////////////////////video *@
+
+
+
+
+                            <video width="320" height="240" controls id="video">
+                              <source src="#" type="video/mp4">
+                              <source src="movie.ogg" type="video/ogg">
+
+                            </video>
 
                             <script>
-                              function preview_image(event) {
-                              var reader = new FileReader();
-                              reader.onload = function () {
-                              var output = document.getElementById('output_image');
-                              output.src = reader.result;
-                              }
-                              reader.readAsDataURL(event.target.files[0]);
+                              function preview_video(event) {
+                                var reader = new FileReader();
+                                reader.onload = function () {
+                                  var output = document.getElementById('video');
+                                  output.src = reader.result;
+                                }
+                                reader.readAsDataURL(event.target.files[0]);
+
+
 
                               }
-
-
                             </script>
 
 
-                              <p style="color: red;">آپلودفایل
-                             <input type="file"  required asp-for="FileUpload">
-                             </p>
+                            <div class="col-lg-6 col-12 p-0">
+                              <p style="color: 	Teal;">آپلود ویدئو
+                                <input type="file" onchange=" preview_video(event)" required asp-for="Video">
 
-                              </div>
+                                @* ////////////////////////////////////////// *@
 
 
-                          </div>
-                          <div class="form-group row">
-                            <div class="col-12">
-                              <fieldset class="checkbox">
-                                <div class="vs-checkbox-con vs-checkbox-primary">
-                                  <input type="checkbox" checked="">
-                                  <span class="vs-checkbox">
-                                    <span class="vs-checkbox--check">
-                                      <i class="vs-icon feather icon-check"></i>
-                                    </span>
-                                  </span>
-                                  <span class="">  شرایط و ضوابط را می پذیرم.</span>
-                                </div>
-                              </fieldset>
                             </div>
+                            <div class="form-group row">
+                              <div class="col-12">
+                                <fieldset class="checkbox">
+                                  <div class="vs-checkbox-con vs-checkbox-primary">
+                                    <input type="checkbox" checked="">
+                                    <span class="vs-checkbox">
+                                      <span class="vs-checkbox--check">
+                                        <i class="vs-icon feather icon-check"></i>
+                                      </span>
+                                    </span>
+                                    <span class="">  شرایط و ضوابط را می پذیرم.</span>
+                                  </div>
+                                </fieldset>
+                              </div>
+                            </div>
+                            <a href="auth-login.html"
+                              class="btn btn-outline-primary float-left btn-inline mb-50">ورود</a>
+                            <button type="submit" class="btn btn-primary">ثبت نام</button>
+                            </button>
                           </div>
-                          <a href="auth-login.html" class="btn btn-outline-primary float-left btn-inline mb-50">ورود</a>
-                          <button type="submit" class="btn btn-primary">ثبت نام</button>
-                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
           </section>
   </form>
 

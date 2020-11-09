@@ -40,6 +40,9 @@ namespace DataLayer.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("VideoName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("image")
                         .HasColumnType("nvarchar(max)");
 

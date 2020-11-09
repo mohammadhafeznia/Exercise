@@ -108,11 +108,41 @@
                              </script>
 
                              
-                              <p style="color: red;">آپلودفایل
+                              <p style="color: 	Teal;">آپلودفایل
                              <input type="file"  required asp-for="FileUpload">
                              </p>
 
-    
+      @* ///////////////////////////////////////video *@
+
+
+                         
+
+
+
+                                  <video width="320" height="240" controls>
+                                    <source src="#" type="video/mp4" id="video"> 
+                                    <source src="movie.ogg" type="video/ogg">
+
+                                  </video>
+
+                                  <script>
+                                    function preview_video(event) {
+                                      var reader = new FileReader();
+                                      reader.onload = function () {
+                                        var output = document.getElementById('video');
+                                        output.src = reader.result;
+                                      }
+                                      reader.readAsDataURL(event.target.files[0]);
+
+
+
+                                    }
+                                  </script>
+                                       <div class="col-lg-6 col-12 p-0">
+                                <p style="color: 	Teal;">آپلود ویدئو
+                                  <input type="file" onchange=" preview_video(event)" required asp-for="Video">
+                                  @* ////////////////////////////////////////// *@
+
 
                           
                                     <div class="form-group row">

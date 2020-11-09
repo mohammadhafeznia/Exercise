@@ -12,5 +12,6 @@ namespace DataLayer.Entites {
         public string Codemeli { get; set; }
         public string image { get; set; }
         public string FileName { get; set; }
+        public string VideoName { get; set; }
     }
 }
