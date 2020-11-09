@@ -1,0 +1,129 @@
+﻿    <!-- BEGIN: Content-->
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="header-navbar-shadow"></div>
+      <div class="content-wrapper">
+        <div class="content-header row">
+          <div class="content-header-left col-md-9 col-12 mb-2">
+            <div class="row breadcrumbs-top">
+              <div class="col-12">
+                <h2 class="content-header-title float-left mb-0">نمایش کوتاه</h2>
+                <div class="breadcrumb-wrapper col-12">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">خانه</a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#">لیست داده ها</a>
+                    </li>
+                    <li class="breadcrumb-item active"> نمایش کوتاه</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+            <div class="form-group breadcrum-right">
+              <div class="dropdown">
+                <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather icon-settings"></i></button>
+                <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">گفتگو</a><a class="dropdown-item" href="#">ایمیل</a><a class="dropdown-item" href="#">تقویم</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body"><!-- Data list view starts -->
+<section id="data-thumb-view" class="data-thumb-view-header">
+  <div class="action-btns d-none">
+    <div class="btn-dropdown mr-1 mb-1">
+      <div class="btn-group dropdown actions-dropodown">
+        <button type="button" class="btn btn-white px-1 py-1 dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> اقدامات</button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#"><i class="feather icon-trash"></i>حذف</a>
+          <a class="dropdown-item" href="#"><i class="feather icon-archive"></i>آرشیو</a>
+          <a class="dropdown-item" href="#"><i class="feather icon-file"></i>چاپ</a>
+          <a class="dropdown-item" href="#"><i class="feather icon-save"></i>یک اقدام دیگر</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    @if (ViewBag.m != null)
+                            {
+           <p class="alert alert-success">@ViewBag.m</p>
+                            }
+
+
+  <!-- dataTable starts -->
+  <div class="table-responsive">
+    <table class="table data-thumb-view Aroco-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>ردیف</th>
+          <th>نام</th>
+          <th>نام خانوادگی </th>
+          <th>آدرس</th>
+          <th>کدملی </th>
+           <th>عکس</th>
+            <th>دانلود</th>
+          
+          <th>اقدام</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (ViewBag .list!=null)
+        {int i=1;
+            @foreach (var item in ViewBag .list)
+        {
+            <tr>
+          <td></td>
+          <td >@i
+          </td>
+          <td class="product-name"> @item.Name   </td>
+           <td class="product-name"> @item.Family    </td>
+            <td class="product-name"> @item.Address    </td>
+             <td class="product-price"> @item.Codemeli   </td>
+             <td class="product-name"> 
+
+               
+               
+               <img src="/upload/@item.image"alt="" style="width: 100px; height:100px; border-radius:50%; "  >
+               
+                 </td>
+
+                  <td class="product-name"> 
+                  <a href="~/upload/@item.FileName"><i class="feather icon-download"></i></a>
+                  
+                   </td>
+         
+         
+          
+          
+       
+          <td class="product-action">
+            <a href="/home/update/@item.Id"><i class="feather icon-edit"></i></a>
+           
+            <a onclick="return confirm('آیا از حذف رکورد مورد نظر مطمئ ن هستید؟')" href="/home/del/@item.Id"><i class="feather icon-trash"></i></a>
+          </td>
+        </tr>
+        i++;
+        }
+        
+        }
+        
+        
+
+      </tbody>
+    </table>
+  </div>
+  <!-- dataTable ends -->
+
+  <!-- add new sidebar starts -->
+  
+  <!-- add new sidebar ends -->
+</section>
+<!-- Data list view end -->
+
+        </div>
+      </div>
+    </div>
+    <!-- END: Content-->

@@ -1,0 +1,12 @@
+C:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.deps.json
+C:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+C:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+C:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csprojAssemblyReference.cache
+C:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfoInputs.cache
+C:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfo.cs
+C:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
+C:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
+c:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.json
+c:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.runtimeconfig.dev.json
+c:\Users\MEDIA MARK\Desktop\project\Exercise\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.genruntimeconfig.cache
