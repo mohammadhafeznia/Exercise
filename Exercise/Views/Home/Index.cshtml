@@ -147,7 +147,7 @@
 
 
 
-                            <video width="320" height="240" controls id="video" >
+                            <video width="320" height="240" controls id="video1" >
                               <source src="movie.mp4" type="video/mp4">
                               <source src="movie.ogg" type="video/ogg">
 
@@ -157,7 +157,7 @@
                               function preview_video(event) {
                                 var reader = new FileReader();
                                 reader.onload = function () {
-                                  var output = document.getElementById('video');
+                                  var output = document.getElementById('video1');
                                   output.src = reader.result;
                                 }
                                 reader.readAsDataURL(event.target.files[0]);

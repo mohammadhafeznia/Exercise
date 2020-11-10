@@ -120,7 +120,7 @@
 
 
                                   <video width="320" height="240" controls>
-                                    <source src="/upload/Model.VideoName" type="video/mp4" id="video"> 
+                                    <source src="~/upload/Model.VideoName" type="video/mp4" id="video1"> 
                                     <source src="movie.ogg" type="video/ogg">
 
                                   </video>
@@ -129,7 +129,7 @@
                                     function preview_video(event) {
                                       var reader = new FileReader();
                                       reader.onload = function () {
-                                        var output = document.getElementById('video');
+                                        var output = document.getElementById('video1');
                                         output.src = reader.result;
                                       }
                                       reader.readAsDataURL(event.target.files[0]);
