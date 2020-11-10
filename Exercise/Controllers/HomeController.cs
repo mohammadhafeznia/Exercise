@@ -50,7 +50,7 @@ namespace test.Controllers {
    
         public async Task<IActionResult> Add (Vm_User bt) {
 
-            if (db.Tbl_Users.Any (a => a.Name == bt.Name))
+            if (db.Tbl_Users.Any (a => a.Codemeli == bt.Codemeli))
 
             {
                 msg = "کدملی قبلا ثبت شده است";
