@@ -14427,6 +14427,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\MEDIA MARK\\Desktop\\project\\Exercise\\Exercise\\Views\\Pay\\list.cshtml",
+      "TargetPath": "Views\\Pay\\list.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\MEDIA MARK\\Desktop\\project\\Exercise\\Exercise\\Views\\Pay\\index.cshtml",
+      "TargetPath": "Views\\Pay\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\MEDIA MARK\\Desktop\\project\\Exercise\\Exercise\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"

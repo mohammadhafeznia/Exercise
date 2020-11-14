@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace DataLayer.Entites {
     public class Tbl_User {
         [Key]
@@ -13,5 +14,7 @@ namespace DataLayer.Entites {
         public string image { get; set; }
         public string FileName { get; set; }
         public string VideoName { get; set; }
+
+    public string Description { get; set; }
     }
 }

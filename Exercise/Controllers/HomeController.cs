@@ -16,11 +16,10 @@ namespace test.Controllers {
         public static string msg, error, NewFileName, NewFileName2, NewFileName3;
 
         private readonly dbcontext db;
-        
-        private readonly IHostingEnvironment _env;
 
-    
-        public HomeController (dbcontext _db, IHostingEnvironment env) {
+        private readonly IWebHostEnvironment _env;
+
+        public HomeController (dbcontext _db, IWebHostEnvironment env) {
             db = _db;
             _env = env;
         }
@@ -47,7 +46,6 @@ namespace test.Controllers {
             return View ();
         }
 
-   
         public async Task<IActionResult> Add (Vm_User bt) {
 
             if (db.Tbl_Users.Any (a => a.Codemeli == bt.Codemeli))
@@ -65,7 +63,6 @@ namespace test.Controllers {
                 await bt.file.CopyToAsync (stream);
             }
 
-
             //////////////////upload file
 
             string FileExtension2 = Path.GetExtension (bt.FileUpload.FileName);
@@ -78,7 +75,6 @@ namespace test.Controllers {
             }
             ////////////////// end upload file
 
-
             //////////////////upload Video
             string FileExtension3 = Path.GetExtension (bt.Video.FileName);
             NewFileName3 = String.Concat (Guid.NewGuid ().ToString (), FileExtension3);
@@ -90,7 +86,6 @@ namespace test.Controllers {
             }
             ////////////////// end upload Video
 
-
             Tbl_User tb = new Tbl_User () {
 
                 Name = bt.Name,
@@ -99,7 +94,8 @@ namespace test.Controllers {
                 Codemeli = bt.Codemeli,
                 image = NewFileName,
                 FileName = NewFileName2,
-                VideoName=NewFileName3
+                VideoName = NewFileName3,
+                Description = bt.Description
 
             };
             db.Tbl_Users.Add (tb);
@@ -130,16 +126,16 @@ namespace test.Controllers {
                 Address = q.Address,
                 Codemeli = q.Codemeli,
                 image = q.image,
-                VideoName = q.VideoName
+                VideoName = q.VideoName,
+                Description = q.Description
 
             };
             return View (bt);
 
         }
 
-       
         [HttpPost]
-        
+
         public async Task<IActionResult> update (Vm_User bt) {
 
             var q = db.Tbl_Users.Where (a => a.Id == bt.Id).SingleOrDefault ();
@@ -159,8 +155,9 @@ namespace test.Controllers {
 
                 }
 
+             q.image= NewFileName;
             }
-            q.image = NewFileName;
+         
             /////////////////////
             if (bt.FileUpload != null) {
                 string FileExtension1 = Path.GetExtension (bt.FileUpload.FileName);
@@ -169,11 +166,11 @@ namespace test.Controllers {
                 using (var stream = new FileStream (path, FileMode.Create)) {
 
                     await bt.FileUpload.CopyToAsync (stream);
-
                 }
+               q.FileName = NewFileName;
 
             }
-            q.FileName = NewFileName;
+
             /////////////////////////
             if (bt.Video != null) {
                 string FileExtension1 = Path.GetExtension (bt.Video.FileName);
@@ -182,11 +179,10 @@ namespace test.Controllers {
                 using (var stream = new FileStream (path, FileMode.Create)) {
 
                     await bt.Video.CopyToAsync (stream);
-
+ 
                 }
-
+               q.VideoName = NewFileName;
             }
-            q.VideoName = NewFileName;
 
             db.Tbl_Users.Update (q);
             db.SaveChanges ();

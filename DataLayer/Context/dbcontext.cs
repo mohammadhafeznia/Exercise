@@ -12,6 +12,7 @@ namespace DataLayer.Context {
         }
 
  public DbSet<Tbl_User> Tbl_Users { get; set; }
+ public DbSet<Tran> Trans { get; set; }
 
     
 }

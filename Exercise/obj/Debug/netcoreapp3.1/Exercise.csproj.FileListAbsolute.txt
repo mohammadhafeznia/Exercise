@@ -382,3 +382,8 @@ c:\Users\MEDIA MARK\Desktop\project\Exercise\Exercise\bin\Debug\netcoreapp3.1\tr
 c:\Users\MEDIA MARK\Desktop\project\Exercise\Exercise\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 c:\Users\MEDIA MARK\Desktop\project\Exercise\Exercise\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 c:\Users\MEDIA MARK\Desktop\project\Exercise\Exercise\obj\Debug\netcoreapp3.1\Exercise.MvcApplicationPartsAssemblyInfo.cs
+c:\Users\MEDIA MARK\Desktop\project\Exercise\Exercise\bin\Debug\netcoreapp3.1\Dto.dll
+c:\Users\MEDIA MARK\Desktop\project\Exercise\Exercise\bin\Debug\netcoreapp3.1\Service.dll
+c:\Users\MEDIA MARK\Desktop\project\Exercise\Exercise\bin\Debug\netcoreapp3.1\ZarinPal.dll
+c:\Users\MEDIA MARK\Desktop\project\Exercise\Exercise\obj\Debug\netcoreapp3.1\Razor\Views\Pay\index.cshtml.g.cs
+c:\Users\MEDIA MARK\Desktop\project\Exercise\Exercise\obj\Debug\netcoreapp3.1\Razor\Views\Pay\list.cshtml.g.cs

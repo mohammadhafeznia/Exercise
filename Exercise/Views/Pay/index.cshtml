@@ -1,0 +1,78 @@
+@model ViewModel.Vm_Tran;
+<form action="/Pay/Request" method="POST">
+ <div class="col-lg-6 col-12 p-0">
+                    <div class="card rounded-0 mb-0 p-2">
+                        <div class="card-header pt-50 pb-1">
+                            <div class="card-title">
+                                <h4 class="mb-0">ایجاد حساب کاربری</h4>
+                            </div>
+                        </div>
+                        <p class="px-2">برای ایجاد یک حساب کاربری فرم زیر را پر کنید.</p>
+                        <div class="card-content">
+                            <div class="card-body pt-0">
+                                <form action="index.html">
+                                    <div class="form-label-group">
+                                        <input asp-for="Name"  class="form-control" placeholder="نام" required="">
+                                        <label for="inputName">نام</label>
+                                    </div>
+                                    <div class="form-label-group">
+                                        <input asp-for="Email" class="form-control" placeholder="ایمیل" required="">
+                                        <label for="inputEmail">ایمیل</label>
+                                    </div>
+                                    <div class="form-label-group">
+                                        <input asp-for="Tel" class="form-control" placeholder=" تلفن" required="">
+                                        <label for="inputPassword"> </label>
+                                    </div>
+                                    <div class="form-label-group">
+                                        <input asp-for="Amount" class="form-control" placeholder=" مبلغ" required="">
+                                        <label for="inputPassword"> </label>
+                                    </div>
+                                    
+                                    <div class="form-group row">
+                                   
+
+<div class="mt-40 text-center">
+    <button type="submit"  class="btn btn-primary">پرداخت</button>
+
+    @{
+      if(ViewBag.msg=="s"){
+    <p class="alert alert-success">پرداخت با موفقیت انجام شد</p>
+
+      }
+        if(ViewBag.msg=="e"){
+    <p class="alert alert-danger"> پرداخت ناموفق بود</p>
+
+      }
+
+
+
+
+    }
+
+</div>
+                                   
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

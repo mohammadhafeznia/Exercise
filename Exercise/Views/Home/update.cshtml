@@ -1,3 +1,8 @@
+  <link rel="stylesheet" type="text/css" href="..\..\..\app-assets\vendors\css\vendors-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="..\..\..\app-assets\vendors\css\editors\quill\katex.min.css">
+    <link rel="stylesheet" type="text/css" href="..\..\..\app-assets\vendors\css\editors\quill\monokai-sublime.min.css">
+    <link rel="stylesheet" type="text/css" href="..\..\..\app-assets\vendors\css\editors\quill\quill.snow.css">
+    <link rel="stylesheet" type="text/css" href="..\..\..\app-assets\vendors\css\editors\quill\quill.bubble.css">
 @model ViewModel.Vm_User
 <!DOCTYPE html>
 
@@ -51,13 +56,13 @@
         <div class="content-header row">
         </div>
         <div class="content-body"><section class="row flexbox-container">
-    <div class="col-xl-8 col-10 d-flex justify-content-center">
+    <div class="col-xl-12 col-12 d-flex justify-content-center">
         <div class="card bg-authentication rounded-0 mb-0">
             <div class="row m-0">
-                <div class="col-lg-6 d-lg-block d-none text-center align-self-center pl-0 pr-3 py-0">
+                <div class="col-lg-12 d-lg-block d-none text-center align-self-center pl-0 pr-3 py-0">
                     <img src="..\..\..\app-assets\images\pages\register.jpg" alt="branding logo">
                 </div>
-                <div class="col-lg-6 col-12 p-0">
+                <div class="col-lg-12 col-12 p-0">
                     <div class="card rounded-0 mb-0 p-2">
                         <div class="card-header pt-50 pb-1">
                             <div class="card-title">
@@ -65,30 +70,36 @@
                             </div>
                         </div>
                         <p class="px-2">برای ایجاد یک حساب کاربری فرم زیر را پر کنید.</p>
+
                         <div class="card-content">
                             <div class="card-body pt-0">
                                 <form action="/home/update" method="POST" enctype="multipart/form-data" >
-                                  
+                                  <div class="form-group row">
+  <div class="col-xs-2">
                                     <div class="form-label-group">
-                                        <input type="text" asp-for="Name" class="form-control" placeholder="نام" required="">
+                                        <input type="text" asp-for="Name" class="form-control" placeholder="نام">
                                         <label for="inputName">نام</label>
                                     </div>
                                     <div class="form-label-group">
-                                        <input type="text"  asp-for="Family" class="form-control" placeholder="نام خانوادگی" required="">
+                                        <input type="text"  asp-for="Family" class="form-control" placeholder="نام خانوادگی">
                                         <label for="inputEmail">نام خانوادگی</label>
                                     </div>
                                     <div class="form-label-group">
-                                        <input type="text" asp-for="Address" class="form-control" placeholder="آدرس " required="">
+                                        <input type="text" asp-for="Address" class="form-control" placeholder="آدرس " >
                                         <label for="inputPassword"> آدرس</label>
                                     </div>
                                     <div class="form-label-group">
-                                        <input  asp-for="Codemeli"  class="form-control" placeholder="کدملی " required="">
+                                        <input class="form-control input-sm"asp-for="Codemeli"  class="form-control" placeholder="کدملی " >
                                         <label for="inputConfPassword">کدملی</label>
+                                        </div>
+                                        </div>
+                                        
                                         <input asp-for="Id" style="display: none;">
 
                            </div>
-                                         <input type="file" onchange=" preview_image(event)" required asp-for="file">
-
+                           <p style="color: 	Teal;">آپلود عکس
+                                         <input type="file" onchange=" preview_image(event)" >
+</p>
                             <img src="~/upload/@Model.image " alt="" id="output_image"
                              style="width: 250px; height:250px">
 
@@ -109,20 +120,14 @@
 
                              
                               <p style="color: 	Teal;">آپلودفایل
-                             <input type="file"  required asp-for="FileUpload">
+                             <input type="file"  >
                              </p>
 
       @* ///////////////////////////////////////video *@
 
-
-                         
-
-
-
                                   <video width="320" height="240" controls>
-                                    <source src="~/upload/Model.VideoName" type="video/mp4" id="video1"> 
-                                    <source src="movie.ogg" type="video/ogg">
-
+                                    <source src="~/upload/@Model.VideoName" type="video/mp4" id="video1"> 
+                                    <source src="~/upload/@Model.VideoName" type="video/ogg">
                                   </video>
 
                                   <script>
@@ -133,48 +138,73 @@
                                         output.src = reader.result;
                                       }
                                       reader.readAsDataURL(event.target.files[0]);
-
-
-
                                     }
                                   </script>
                                        <div class="col-lg-6 col-12 p-0">
                                 <p style="color: 	Teal;">آپلود ویدئو
-                                  <input type="file" onchange=" preview_video(event)" required asp-for="Video">
+                                  <input type="file" onchange=" preview_video(event)" >
                                   @* ////////////////////////////////////////// *@
 
-
+                                       
                           
                                     <div class="form-group row">
-                                        <div class="col-12">
-                                            <fieldset class="checkbox">
-                                              <div class="vs-checkbox-con vs-checkbox-primary">
-                                                <input type="checkbox" checked="">
-                                                <span class="vs-checkbox">
-                                                  <span class="vs-checkbox--check">
-                                                    <i class="vs-icon feather icon-check"></i>
-                                                  </span>
-                                                </span>
-                                                <span class="">  شرایط و ضوابط را می پذیرم.</span>
-                                              </div>
-                                            </fieldset>
-                                        </div>
+                                       
+
+   <button type="submit" class="btn btn-primary float-right btn-inline mb-50">ثبت نام
+                                </button>
+  
+
                                     </div>
                                     
-                                    <button type="submit" class="btn btn-primary float-right btn-inline mb-50">ثبت نام
-                                </button></form>
+                                    
+                                 </form>
                             </div>
-                        </div>
+                                                            <section class="full-editor">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          
+        </div>
+        <div class="card-content collapse show">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <div id="full-wrapper">
+                  <div id="full-container">
+                    <input type="text" asp-for="Description"  style="display: none;">
+
+                    <div class="editor" id="des">                 
+       
+
+              @Html.Raw(@Model.Description);
+
+
                     </div>
 
 
+                      <span class="alert alert-success mt-2 mb-2 " style="display: none; " id="msg">ثبت شد</span>
+                      <a class="btn btn-info" onclick="send();">ارسال متن</a>
+                      <script>
+                        function send()
+                        {
 
-
-
-
-        
-
-
+                          document.getElementById("Description").value=document.getElementById("des").innerHTML;
+                          document.getElementById("msg").style.display="block";
+                        }
+                      </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -205,10 +235,33 @@
     <script src="..\..\..\app-assets\js\core\app.min.js"></script>
     <script src="..\..\..\app-assets\js\scripts\components.min.js"></script>
     <!-- END: Theme JS-->
+     <!-- BEGIN: Vendor JS-->
+    <script src="..\..\..\app-assets\vendors\js\vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="..\..\..\app-assets\vendors\js\ui\jquery.sticky.js"></script>
+    <script src="..\..\..\app-assets\vendors\js\editors\quill\katex.min.js"></script>
+    <script src="..\..\..\app-assets\vendors\js\editors\quill\highlight.min.js"></script>
+    <script src="..\..\..\app-assets\vendors\js\editors\quill\quill.min.js"></script>
+    <script src="..\..\..\app-assets\vendors\js\extensions\jquery.steps.min.js"></script>
+    <script src="..\..\..\app-assets\vendors\js\forms\validation\jquery.validate.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="..\..\..\app-assets\js\core\app-menu.min.js"></script>
+    <script src="..\..\..\app-assets\js\core\app.min.js"></script>
+    <script src="..\..\..\app-assets\js\scripts\components.min.js"></script>
+    <script src="..\..\..\app-assets\js\scripts\customizer.min.js"></script>
+    <script src="..\..\..\app-assets\js\scripts\footer.min.js"></script>
+    <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
+    <script src="..\..\..\app-assets\js\scripts\editors\editor-quill.min.js"></script>
     <!-- END: Page JS-->
-
+<!-- BEGIN: Page Vendor JS-->
+   
+    <!-- END: Page JS-->
   </body>
   <!-- END: Body-->
 </html>
